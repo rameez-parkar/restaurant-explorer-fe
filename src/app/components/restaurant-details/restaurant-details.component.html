@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="spinner-container" *ngIf="loading; else details">
+    <mat-spinner diameter="50"></mat-spinner>
+</div>
+<ng-template #details>
+    <div class="restaurant-details-container">
+        <div *ngIf="restaurant.photos.length > 0" class="restaurant-images-slider">
+          <!-- Restaurant images slider -->
+          <img *ngFor="let image of restaurant.photos" [src]="image" alt="Restaurant Image">
+        </div>
+        <div *ngIf="restaurant.photos.length === 0" class="restaurant-images-slider">
+          <!-- Restaurant images slider -->
+          <img *ngFor="let image of [restaurant.image_url]" [src]="image" alt="Restaurant Image">
+        </div>
+        <div class="details-and-reservation">
+          <div class="restaurant-details">
+            <h2>{{ restaurant.name }}</h2>
+            <p class="status">{{ restaurant.is_closed ? 'Closed' : 'Open' }}</p>
+            <p class="phone"><b>Phone:</b> {{ restaurant.display_phone }}</p>
+            <div class="ratings">
+              <span class="rating">{{ restaurant.rating }} <mat-icon>star</mat-icon></span>
+              <span class="review-count">({{ restaurant.review_count }} reviews)</span>
+            </div>
+            <p class="cuisines"><b>Cuisines:</b> {{ getCuisines(restaurant.categories) }}</p>
+            <p class="address"><b>Address:</b> {{ restaurant.location.display_address.join(", ") }}</p>
+            <p class="website" *ngIf="restaurant.attributes"><b>Website:</b> <a href="{{ restaurant.attributes.menu_url }}"> {{ restaurant.attributes.menu_url }}</a></p>
+            <p class="average-price"><b>Average Price:</b> {{ restaurant.price }}</p>
+          </div>
+      
+          <div class="reservation-container">
+            <!-- Reservation section -->
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Select Date" (dateChange)="onDateChange($event)" [min]="minDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Select Time Slot</mat-label>
+              <mat-select [(value)]="selectedTimeSlot" (selectionChange)="onTimeSlotChange($event.value)">
+                <mat-option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-raised-button class="reserve-button" (click)="reserveTable()">Reserve a Table</button>
+          </div>
+        </div>
+      </div>
+</ng-template>

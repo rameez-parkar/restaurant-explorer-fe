@@ -1,0 +1,51 @@
+app-header {
+    top: 0;
+    position: sticky;
+}
+
+.spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }  
+
+.bookings-container {
+    margin: 16px;
+    padding: 16px;
+  }
+  
+  .booking-item {
+    display: flex;
+    justify-content: space-between; /* Align items in a row with space between */
+  }
+  
+  .cancel-button {
+    align-self: center; /* Align button to the end of the flex container (right side) */
+  }
+  
+  .yelp-booking-item {
+    background-color: #fff; /* White background for each booking item */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Yelp's box shadow */
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .booking-details {
+    font-size: 16px;
+  }
+  
+  .yelp-restaurant-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Yelp's text color */
+    cursor: pointer;
+  }
+  
+  .yelp-reservation-id,
+  .yelp-reservation-date,
+  .yelp-reservation-time,
+  .yelp-reserved-by {
+    color: #666; /* Yelp's secondary text color */
+  }

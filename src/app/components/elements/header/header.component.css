@@ -1,0 +1,49 @@
+.app-bar {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0073bb;
+    color: white;
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.app-name:hover {
+    cursor: pointer;
+}
+
+.logout-button,
+.subscribe-button,
+.bookings-button,
+.help-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-button:hover,
+.subscribe-button:hover,
+.bookings-button:hover,
+.help-button:hover {
+    text-decoration: underline;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px; /* Adjust spacing from other elements */
+}

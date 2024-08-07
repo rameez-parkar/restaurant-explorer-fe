@@ -1,0 +1,47 @@
+app-header {
+    top: 0;
+    position: sticky;
+}
+
+.restaurant-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0; /* Yelp's border color */
+}
+
+.restaurant-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Yelp's image shadow */
+}
+
+.restaurant-details {
+    flex: 1;
+}
+
+.restaurant-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333; /* Yelp's text color */
+}
+
+.restaurant-rating {
+    font-size: 16px;
+    color: #e7711b; /* Yelp's rating color */
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-cuisines {
+    font-size: 16px;
+    color: #666666; /* Yelp's secondary text color */
+}
+
+.restaurant-address {
+    font-size: 14px;
+    color: #666666;
+}

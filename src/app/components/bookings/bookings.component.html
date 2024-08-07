@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="bookings-container">
+    <h1>Reservations</h1>
+    <div class="spinner-container" *ngIf="loading; else bookingsList">
+        <mat-spinner diameter="50"></mat-spinner>
+    </div>
+    <ng-template #bookingsList>
+        <div *ngIf="bookings.length > 0">
+            <div *ngFor="let booking of bookings" class="booking-item yelp-booking-item">
+                <div class="booking-details">
+                    <div (click)="goToRestaurant(booking.restaurantId)" class="yelp-restaurant-name">{{ booking.restaurantName }}</div>
+                    <div class="yelp-reservation-id"><b>Reservation ID:</b> {{ booking.id }}</div>
+                    <div class="yelp-reservation-date"><b>Date:</b> {{ formatDate(+booking.reservationTimestamp) }}</div>
+                    <div class="yelp-reservation-time"><b>Time:</b> {{ formatTime(+booking.reservationTimestamp) }}</div>
+                    <div class="yelp-reserved-by"><b>Reserved by:</b> {{ booking.email }}</div>
+                </div>
+                <button mat-raised-button color="warn" class="cancel-button" (click)="cancelBooking(booking.id)">Cancel</button>
+            </div>
+        </div>
+        <div *ngIf="bookings.length === 0" class="booking-details">
+            <p>No reservations found.</p>
+        </div>
+    </ng-template>
+</div>

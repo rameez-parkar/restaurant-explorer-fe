@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="content-container">
+    <div class="spinner-container" *ngIf="loading; else results">
+        <mat-spinner diameter="50"></mat-spinner>
+    </div>
+    <ng-template #results>
+        <div class="filters-container">
+            <app-filters [location]="filters.location" (filters)="applyFilters($event)"></app-filters>
+        </div>
+        <div class="search-list-container" *ngIf="restaurants">
+            <div *ngFor="let restaurant of restaurants">
+            <app-restaurant-item [restaurant]="restaurant" (restaurantDetails)="selectRestaurant($event)"></app-restaurant-item>
+            </div>
+        </div>
+    </ng-template>
+</div>
+  

@@ -1,0 +1,40 @@
+.filters {
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+.filter-option {
+    margin-bottom: 10px;
+}
+  
+.filter-option label {
+    display: block;
+    font-weight: bold;
+}
+
+.filter-option select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="location"] {
+    width: 93%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0073bb;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+  

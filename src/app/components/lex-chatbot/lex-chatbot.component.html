@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="chat-page-container">
+    <div class="chat-container">
+      <div class="message" *ngFor="let message of messages; let i = index" [ngStyle]="{'text-align': message.sender === 'bot' ? 'left' : 'right'}">
+        <span class="bubble" [ngStyle]="{'background-color': message.sender === 'bot' ? '#f0f0f0' : '#007bff', 'color': message.sender === 'bot' ? '#000' : '#fff'}">
+          {{ message.content }}
+        </span>
+      </div>
+    </div>
+    <div class="enter-send">
+      <input type="text" [(ngModel)]="inputText" (keypress)="handleKeyPress($event)" placeholder="Type your message..." style="width: 100%; padding: 10px; margin-top: 10px;" />
+      <button mat-raised-button (click)="sendMessage()" style="margin-top: 10px;">Send</button>
+    </div>
+</div>

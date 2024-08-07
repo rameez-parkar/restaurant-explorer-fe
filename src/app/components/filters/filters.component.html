@@ -1,0 +1,13 @@
+<div class="filters">
+    <h3>Filters</h3>
+    <div class="filter-option">
+      <label for="cuisine-filter">Location:</label>
+      <input type="location" id="location" name="location" [(ngModel)]="location" required>
+      <!-- <select id="cuisine-filter" [(ngModel)]="selectedCuisine">
+        <option value="">All</option>
+        <option *ngFor="let cuisine of cuisines" [value]="cuisine">{{ cuisine }}</option>
+      </select> -->
+    </div>
+    <button type="submit" (click)="applyFilters()">Apply Filters</button>
+</div>
+  
