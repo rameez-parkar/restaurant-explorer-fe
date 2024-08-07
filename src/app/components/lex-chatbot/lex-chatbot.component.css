@@ -1,0 +1,35 @@
+.chat-page-container {
+    height: 95%;
+}
+
+.chat-container {
+    height: 88%;
+    overflow-y: scroll;
+}
+
+.message {
+    padding: 20px;
+}
+
+.bubble {
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.enter-send {
+    padding: 16px;
+    display: flex;
+}
+
+.enter-send input {
+    border-radius: 20px;
+    flex: 3;
+    margin-right: 8px;
+}
+
+.enter-send button {
+    background-color: #0073bb;
+    color: white;
+}

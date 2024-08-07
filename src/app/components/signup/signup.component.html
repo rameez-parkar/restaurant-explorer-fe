@@ -1,0 +1,42 @@
+<div class="background-image">
+    <div class="app-name">
+      <h1>RESTAURANT EXPLORER</h1>
+    </div>
+    <div class="signup-container">
+      <h2>Sign Up</h2>
+      <form (ngSubmit)="signUp()">
+        <div class="form-group">
+          <div class="profile-pic-container">
+            <img [src]="profilePicUrl || 'assets/images/default-user.png'" alt="Profile Picture" class="profile-pic">
+          </div>
+          <input type="file" id="profilePicture" (change)="onFileSelected($event)">
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" [(ngModel)]="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" [(ngModel)]="address" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" [(ngModel)]="phone" required>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="center">OR</div>
+      <div class="center">
+        <a routerLink="/signin">Proceed to sign in</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,9 @@
+<div class="restaurant-item">
+    <img [src]="restaurant.image_url" alt="{{ restaurant.name }}">
+    <div class="restaurant-details">
+      <h2 class="restaurant-name"><a href="javascript:void(0)" (click)="selectRestaurant(restaurant.id)">{{ restaurant.name }}</a></h2>
+      <p class="restaurant-rating">{{ restaurant.rating }} <mat-icon>star</mat-icon> <span style="color: gray;">({{ restaurant.review_count }})</span></p>
+      <p class="restaurant-cuisines">{{ getCuisinesString(restaurant.categories) }}</p>
+      <p class="restaurant-address">Address: {{ restaurant.location.display_address.join(" ") }}</p>
+    </div>
+</div>
